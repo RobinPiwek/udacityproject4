@@ -22,13 +22,6 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "ds_sql_Payroll_Summary",
-						"type": "DatasetReference"
-					},
-					"name": "sink1"
-				},
-				{
-					"dataset": {
 						"referenceName": "ds_dirstaging",
 						"type": "DatasetReference"
 					},
@@ -37,6 +30,13 @@
 						"referenceName": "ls_datalakerp",
 						"type": "LinkedServiceReference"
 					}
+				},
+				{
+					"dataset": {
+						"referenceName": "ds_sql_Payroll_Summary",
+						"type": "DatasetReference"
+					},
+					"name": "sink3"
 				}
 			],
 			"transformations": [
@@ -140,7 +140,18 @@
 				"          FiscalYear),",
 				"     TotalPaid = sum(TotalPaid)) ~> aggregate1",
 				"aggregate1 sink(allowSchemaDrift: true,",
-				"     validateSchema: true,",
+				"     validateSchema: false,",
+				"     partitionFileNames:['NYC_Payroll_Summary.csv'],",
+				"     truncate: true,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     saveOrder: 0,",
+				"     partitionBy('hash', 1)) ~> sink2",
+				"aggregate1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
 				"     input(",
 				"          FiscalYear as integer,",
 				"          AgencyName as string,",
@@ -154,16 +165,7 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1",
-				"aggregate1 sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     truncate: true,",
-				"     umask: 0022,",
-				"     preCommands: [],",
-				"     postCommands: [],",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
-				"     saveOrder: 1) ~> sink2"
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink3"
 			]
 		}
 	}
