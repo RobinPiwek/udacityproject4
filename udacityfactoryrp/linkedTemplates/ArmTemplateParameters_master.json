@@ -5,10 +5,10 @@
 		"factoryName": {
 			"value": "udacityfactoryrp"
 		},
-		"ls_datalakerp_accountKey": {
+		"ls_databaserp_connectionString": {
 			"value": ""
 		},
-		"ls_databaserp_connectionString": {
+		"ls_datalakerp_accountKey": {
 			"value": ""
 		},
 		"ls_datalakerp_properties_typeProperties_url": {

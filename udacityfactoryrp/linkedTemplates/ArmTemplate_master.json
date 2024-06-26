@@ -7,13 +7,13 @@
 			"metadata": "Data Factory-Name",
 			"defaultValue": "udacityfactoryrp"
 		},
-		"ls_datalakerp_accountKey": {
-			"type": "secureString",
-			"metadata": "Sichere Zeichenfolge für \"accountKey\" von \"ls_datalakerp\""
-		},
 		"ls_databaserp_connectionString": {
 			"type": "secureString",
 			"metadata": "Sichere Zeichenfolge für \"connectionString\" von \"ls_databaserp\""
+		},
+		"ls_datalakerp_accountKey": {
+			"type": "secureString",
+			"metadata": "Sichere Zeichenfolge für \"accountKey\" von \"ls_datalakerp\""
 		},
 		"ls_datalakerp_properties_typeProperties_url": {
 			"type": "string",
@@ -46,11 +46,11 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"ls_datalakerp_accountKey": {
-						"value": "[parameters('ls_datalakerp_accountKey')]"
-					},
 					"ls_databaserp_connectionString": {
 						"value": "[parameters('ls_databaserp_connectionString')]"
+					},
+					"ls_datalakerp_accountKey": {
+						"value": "[parameters('ls_datalakerp_accountKey')]"
 					},
 					"ls_datalakerp_properties_typeProperties_url": {
 						"value": "[parameters('ls_datalakerp_properties_typeProperties_url')]"
