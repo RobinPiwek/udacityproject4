@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "udacityfactoryrp"
+		},
+		"ls_datalakerp_accountKey": {
+			"value": ""
+		},
+		"ls_databaserp_connectionString": {
+			"value": ""
+		},
+		"ls_datalakerp_properties_typeProperties_url": {
+			"value": "https://udacityspeicherkontorp.dfs.core.windows.net/"
+		}
+	}
+}
