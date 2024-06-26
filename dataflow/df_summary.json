@@ -151,7 +151,7 @@
 				"     saveOrder: 0,",
 				"     partitionBy('hash', 1)) ~> sink2",
 				"aggregate1 sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
+				"     validateSchema: true,",
 				"     input(",
 				"          FiscalYear as integer,",
 				"          AgencyName as string,",
